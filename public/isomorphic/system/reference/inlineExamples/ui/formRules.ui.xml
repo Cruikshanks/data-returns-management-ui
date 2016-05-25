@@ -1,0 +1,33 @@
+
+<DynamicForm numCols="4" colWidths="150,300,150,*" ID="formRulesForm" autoDraw="false">
+    <fields>
+        <HeaderItem name="accountSetupHeader" defaultValue="Account Setup"/>
+        <TextItem name="userName" title="User name" defaultValue="smartyCat" endRow="true"/>
+        <TextItem name="email" title="Email">
+            <requiredWhen fieldName="signup" operator="equals" value="true" />
+        </TextItem>
+        <CheckboxItem name="signup" title="Sign up for newsletter"/>
+        <CheckboxItem defaultValue="true" name="useDefaultPassword" title="Use default password"/>
+        <StaticTextItem name="defaultPassword" title="Your password" defaultValue="ne5iF21">
+            <visibleWhen fieldName="useDefaultPassword" operator="equals" value="true" />
+        </StaticTextItem>
+        <PasswordItem name="customPassword" title="Enter custom password" endRow="true">
+            <validators>
+                <validator type="lengthRange" min="6" />
+            </validators>
+            <visibleWhen fieldName="useDefaultPassword" operator="notEqual" value="true" />
+            <requiredWhen fieldName="useDefaultPassword" operator="notEqual" value="true" />
+        </PasswordItem>
+        <CheckboxItem name="acceptTerms" title="I accept the terms and conditions"/>
+        <ButtonItem name="proceedButton" title="Proceed" colSpan="1" startRow="true">
+            <readOnlyWhen fieldName="acceptTerms" operator="notEqual" value="true" />
+            <click>
+                <Action>
+                    <target>formRulesForm</target>
+                    <name>validate</name>
+                </Action>
+            </click>
+        </ButtonItem>
+    </fields>
+</DynamicForm>
+

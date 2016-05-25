@@ -1,0 +1,154 @@
+// Compiled with:
+// compass compile --sass-dir adaptiveWidth_sass --no-line-comments -s compact
+
+@import "compass/css3";
+@import "compass/css3/selection";
+
+.relatedSearchItem,
+.relatedSearchItemRTL,
+.relatedSearchItemFocused,
+.relatedSearchItemFocusedRTL,
+.relatedSearchItemDisabled,
+.relatedSearchItemDisabledRTL,
+.relatedSearchItemError,
+.relatedSearchItemErrorRTL,
+.relatedSearchItemHint,
+.relatedSearchItemHintRTL,
+.relatedSearchItemDisabledHint,
+.relatedSearchItemDisabledHintRTL {
+    border: 1px solid #000;
+    @include border-radius(4px);
+    padding: 2px 9px 2px 9px;
+    color: #000;
+    font-size: 15px;
+    outline-color: #0cc;
+
+    @include selection {
+        background: #9dd;
+    }
+    @include input-placeholder {
+        color: #377;
+        // Override Firefox’ placeholder opacity
+        opacity: 1;
+    }
+    // Hide the ‘x’ button in IE10+
+    &::-ms-clear {
+        display: none;
+    }
+}
+.relatedSearchItemHint,
+.relatedSearchItemHintRTL {
+    color: #377;
+}
+.relatedSearchItemDisabled,
+.relatedSearchItemDisabledRTL,
+.relatedSearchItemDisabledHint,
+.relatedSearchItemDisabledHintRTL {
+    border: 1px solid #999;
+    color: #aaa;
+
+    @include input-placeholder {
+        color: #7aa;
+    }
+}
+
+.relatedSearchItem,
+.relatedSearchItemFocused,
+.relatedSearchItemDisabled,
+.relatedSearchItemError,
+.relatedSearchItemHint,
+.relatedSearchItemDisabledHint {
+    border-left-color: #333;
+    @include border-top-left-radius(0px);
+    @include border-bottom-left-radius(0px);
+    @include box-shadow(inset #ccc 2px 2px 4px);
+}
+
+.relatedSearchItemRTL,
+.relatedSearchItemFocusedRTL,
+.relatedSearchItemDisabledRTL,
+.relatedSearchItemErrorRTL,
+.relatedSearchItemHintRTL,
+.relatedSearchItemDisabledHintRTL {
+    border-right-color: #333;
+    @include border-top-right-radius(0px);
+    @include border-bottom-right-radius(0px);
+    @include box-shadow(inset #ccc -2px 2px 4px);
+}
+
+.findRelatedButton,
+.findRelatedButtonRTL,
+.findRelatedButtonOver,
+.findRelatedButtonOverRTL,
+.findRelatedButtonFocused,
+.findRelatedButtonFocusedRTL,
+.findRelatedButtonFocusedOver,
+.findRelatedButtonFocusedOverRTL,
+.findRelatedButtonDown,
+.findRelatedButtonDownRTL,
+.findRelatedButtonFocusedDown,
+.findRelatedButtonFocusedDownRTL,
+.findRelatedButtonDisabled,
+.findRelatedButtonDisabledRTL {
+    border: 1px solid #000;
+    padding: 2px 4px 2px 4px;
+    background-color: #eee;
+    @include background-image(linear-gradient(#fff, #eee 20%, #9cc));
+    outline: none;
+    font-size: 15px;
+}
+.findRelatedButtonOver,
+.findRelatedButtonOverRTL,
+.findRelatedButtonFocusedOver,
+.findRelatedButtonFocusedOverRTL,
+.findRelatedButtonDown,
+.findRelatedButtonDownRTL {
+    background-color: #cff;
+    @include background-image(linear-gradient(#eff, #cff 20%, #9cc));
+}
+.findRelatedButtonDown,
+.findRelatedButtonDownRTL,
+.findRelatedButtonFocusedDown,
+.findRelatedButtonFocusedDownRTL {
+    background-color: #bee;
+    @include background-image(linear-gradient(#bee, #bee 20%, #8bb));
+}
+.findRelatedButtonFocused,
+.findRelatedButtonFocusedRTL,
+.findRelatedButtonFocusedOver,
+.findRelatedButtonFocusedOverRTL,
+.findRelatedButtonFocusedDown,
+.findRelatedButtonFocusedDownRTL {
+    border-color: #0cc;
+    border-bottom-color: #0aa;
+}
+.findRelatedButtonDisabled,
+.findRelatedButtonDisabledRTL {
+    border-color: #999;
+    color: #aaa;
+    @include background-image(linear-gradient(#fff, #eee 20%, #cee));
+}
+
+.findRelatedButton,
+.findRelatedButtonOver,
+.findRelatedButtonFocused,
+.findRelatedButtonFocusedOver,
+.findRelatedButtonDown,
+.findRelatedButtonFocusedDown,
+.findRelatedButtonDisabled {
+    border-right-width: 0px;
+    @include border-top-left-radius(3px);
+    @include border-bottom-left-radius(3px);
+}
+
+.findRelatedButtonRTL,
+.findRelatedButtonOverRTL,
+.findRelatedButtonFocusedRTL,
+.findRelatedButtonFocusedOverRTL,
+.findRelatedButtonDownRTL,
+.findRelatedButtonFocusedDownRTL,
+.findRelatedButtonDisabledRTL {
+    border-left-width: 0px;
+    @include border-top-right-radius(3px);
+    @include border-bottom-right-radius(3px);
+}

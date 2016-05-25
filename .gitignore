@@ -7,8 +7,8 @@ node_modules
 uploads
 govuk_modules
 govuk_modules/**
-public
-public/**
+#public
+#public/**
 .idea
 /nbproject/**
 reports
