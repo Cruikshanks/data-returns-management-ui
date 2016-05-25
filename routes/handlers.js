@@ -1,4 +1,7 @@
+'use strict';
+
 var api_client = require('../api/api_client');
+var messages = require('./rest_messages');
 
 module.exports = {
 
@@ -19,16 +22,8 @@ module.exports = {
             }
         );
     },
-
-    listDataHandler: function(request, reply) {
-        api_client.getListData(request.params.listname).then(function successHandler(result) {
-             reply(result).code(200);
-        }, function failureHandler(error) {
-             reply(error).code(500);
-        });
-    },
-
-    listDataHandler2: function(request, reply) {
+    
+    fetchHandler: function(request, reply) {
         try {
             if (!request.query.list) {
                 throw new Error("No request query");
@@ -36,7 +31,8 @@ module.exports = {
                 var queryObject = JSON.parse(request.query.list);
                 api_client.getListData(queryObject.name).then(function successHandler(result) {
                     console.log("Fetch: " + queryObject.name);
-                    reply(result).code(200);
+                    var response = new messages.FetchResponse(result).getMessage();
+                    reply(response).code(200);
                 }, function failureHandler(error) {
                     reply(error).code(500);
                 });

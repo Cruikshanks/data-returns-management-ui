@@ -15,12 +15,7 @@ module.exports = [
     },
     {
         method: 'get',
-        path: '/lists/{listname}',
-        handler: handlers.listDataHandler
-    },
-    {
-        method: 'get',
-        path: '/lists/getlist',
-        handler: handlers.listDataHandler2
+        path: '/lists/fetch',
+        handler: handlers.fetchHandler
     },
 ];

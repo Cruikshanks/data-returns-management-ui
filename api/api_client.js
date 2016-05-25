@@ -40,7 +40,8 @@ module.exports.getListData = function(list) {
                     } else {
                         try {
                             var parsedJson = JSON.parse(httpResponse.body);
-                            resolve(JSON.stringify(parsedJson));
+                            // Return the result as an array
+                            resolve(parsedJson);
                         } catch (err) {
                             reject({
                                 isUserError: true,
